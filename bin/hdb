@@ -1,0 +1,8 @@
+#!/bin/sh
+# EX: hdb roundpegg-production rp.dump roundpegg_development
+
+url=$(heroku pgbackups:url -a $1)
+
+curl -o $PROJECTS/backups/$2 $url
+
+pg_restore --verbose --clean --no-acl --no-owner -h localhost -d $3 $PROJECTS/backups/$2
