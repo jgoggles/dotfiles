@@ -1,7 +1,7 @@
 #!/bin/sh
 # EX: hdb roundpegg-production rp.dump roundpegg_development
 
-url=$(heroku pgbackups:url -a $1)
+url=$(heroku pg:backups public-url -a $1 | cat)
 
 curl -o $PROJECTS/backups/$2 $url
 
