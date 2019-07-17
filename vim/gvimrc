@@ -1,5 +1,6 @@
 set guifont=Monaco:h14
 colorscheme atom
+:hi Search guibg=LightBlue
 
 if has("gui_macvim")
   macmenu &File.New\ Tab key=<nop>
